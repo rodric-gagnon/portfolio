@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About · Rodric Gagnon</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --surface-page:#F5F1EA; --surface-raised:#FCFAF6;
+  --text-primary:#1A1714; --text-secondary:#514B44; --text-muted:#8A8177;
+  --border:#E3DCD0; --border-strong:#D2C9BB;
+  --primary:#3A5F78; --primary-hover:#2F4E63; --primary-bg:#E7ECF0;
+  --accent:#C06B47; --accent-hover:#A85A39; --accent-bg:#F3E5DC;
+  --on-primary:#F5F1EA;
+  --font-display:'Newsreader',Georgia,serif;
+  --font-ui:'Inter',system-ui,-apple-system,sans-serif;
+  --font-mono:'Space Mono',ui-monospace,monospace;
+  --maxw:1120px;
+}
+html[data-theme="dark"]{
+  --surface-page:#17140F; --surface-raised:#201C16;
+  --text-primary:#F0EBE1; --text-secondary:#B7AE9F; --text-muted:#8A8175;
+  --border:#2E2820; --border-strong:#3D362B;
+  --primary:#7FA6BE; --primary-hover:#9BBBCF; --primary-bg:#1E2C34;
+  --accent:#D98A63; --accent-hover:#E6A17E; --accent-bg:#2E211A;
+  --on-primary:#17140F;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--surface-page);color:var(--text-primary);font-family:var(--font-ui);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .4s ease,color .4s ease}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.narrow{max-width:720px;margin:0 auto;padding:0 24px}
+.label{font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--surface-page) 88%,transparent);backdrop-filter:blur(10px);border-bottom:.5px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--font-display);font-weight:500;font-size:20px}
+.nav-links{display:flex;align-items:center;gap:22px}
+.nav-links a{font-size:14px;color:var(--text-secondary);transition:color .2s}
+.nav-links a:hover{color:var(--text-primary)}
+.nav-links a.here{color:var(--text-primary)}
+.resume{background:var(--primary);color:var(--on-primary)!important;padding:7px 14px;border-radius:7px;font-weight:500;transition:background .2s}
+.resume:hover{background:var(--primary-hover)}
+.toggle{width:34px;height:34px;border:.5px solid var(--border-strong);border-radius:8px;background:transparent;display:grid;place-items:center;cursor:pointer;color:var(--text-secondary);transition:border-color .2s,color .2s}
+.toggle:hover{color:var(--text-primary);border-color:var(--text-muted)}
+.toggle svg{width:16px;height:16px}
+html[data-theme="dark"] .sun{display:block}html[data-theme="dark"] .moon{display:none}
+.sun{display:none}.moon{display:block}
+
+.cs-hero{padding:44px 0 8px}
+.back{font-family:var(--font-mono);font-size:12px;color:var(--text-secondary);transition:color .2s}
+.back:hover{color:var(--primary)}
+.cs-hero h1{font-family:var(--font-display);font-weight:500;font-size:clamp(34px,5.4vw,58px);line-height:1.04;letter-spacing:-.01em;margin:16px 0 0;max-width:14ch}
+.dek{font-size:clamp(17px,2.3vw,21px);color:var(--text-secondary);max-width:640px;margin-top:18px;line-height:1.5}
+.meta{display:flex;flex-wrap:wrap;gap:14px 40px;margin-top:30px;padding-top:22px;border-top:.5px solid var(--border)}
+.meta .k{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em}
+.meta .v{font-size:14.5px;margin-top:4px}
+
+.section{padding:22px 0}
+.section h2{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,3.2vw,32px);margin:24px 0 14px}
+.section p{color:var(--text-secondary);margin-bottom:16px}
+.section p a{color:var(--primary);border-bottom:.5px solid color-mix(in srgb,var(--primary) 35%,transparent)}
+.section p a:hover{color:var(--primary-hover)}
+.lede p{font-size:clamp(18px,2.2vw,21px);color:var(--text-primary);line-height:1.5}
+.attrs{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 4px}
+.attrs span{font-family:var(--font-mono);font-size:11px;color:var(--text-secondary);background:var(--surface-raised);border:.5px solid var(--border);border-radius:6px;padding:5px 10px}
+
+.worklist{margin:20px 0 4px;border-top:.5px solid var(--border)}
+.worklist a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:15px 2px;border-bottom:.5px solid var(--border);color:var(--text-primary);transition:color .2s}
+.worklist a:hover{color:var(--primary)}
+.worklist .wl-t{font-family:var(--font-display);font-size:19px}
+.worklist .wl-k{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+.worklist a:hover .wl-k{color:var(--primary)}
+
+.cta{margin:24px 0 6px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.cta a.btn{display:inline-block;background:var(--primary);color:var(--on-primary);padding:11px 20px;border-radius:8px;font-weight:500;font-size:15px;transition:background .2s}
+.cta a.btn:hover{background:var(--primary-hover)}
+.cta a.plain{font-family:var(--font-mono);font-size:13px;color:var(--text-secondary)}
+.cta a.plain:hover{color:var(--primary)}
+
+.cs-nav{border-top:.5px solid var(--border);margin-top:36px}
+.cs-nav .wrap{display:flex;justify-content:space-between;gap:16px;padding:32px 24px;flex-wrap:wrap}
+.cs-nav a{font-family:var(--font-display);font-size:20px;color:var(--primary)}
+.cs-nav .lil{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:4px}
+
+footer{border-top:.5px solid var(--border);background:var(--surface-raised)}
+.foot-bottom .wrap{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;flex-wrap:wrap}
+.foot-bottom span{font-size:12.5px;color:var(--text-muted)}
+
+[data-reveal]{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+[data-reveal].is-in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}[data-reveal]{opacity:1;transform:none}}
+@media(max-width:760px){.nav-links a:not(.resume){display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap nav">
+    <a href="index.html" class="brand">Rodric Gagnon</a>
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="about.html" class="here">About</a>
+      <a href="index.html#contact">Contact</a>
+      <button class="toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="cs-hero">
+    <div class="wrap">
+      <a href="index.html" class="back">← Home</a>
+      <div style="margin-top:20px" data-reveal>
+        <span class="label">About</span>
+        <h1>Design for makers, nonprofits, and small businesses.</h1>
+        <p class="dek">I'm Rodric Gagnon, a graphic designer on Whidbey Island who builds brand systems, packaging, and print for people who make real things.</p>
+        <div class="meta">
+          <div><div class="k">Location</div><div class="v">Coupeville, WA</div></div>
+          <div><div class="k">Studio</div><div class="v">Rodric Gagnon Design Co.</div></div>
+          <div><div class="k">Currently</div><div class="v">WhidbeyHealth Foundation</div></div>
+          <div><div class="k">Focus</div><div class="v">Brand systems, packaging &amp; print</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="narrow">
+    <section class="section lede" data-reveal>
+      <p>I design brand identities, packaging, and printed material for small businesses, craft producers, and nonprofits around the Pacific Northwest. A lot of my favorite projects start the same way. A maker has something good, and it needs to look the part: a distillery with a new spirit, an arts foundation finding its voice, a hospital foundation telling its year in a report.</p>
+    </section>
+
+    <section class="section" data-reveal>
+      <h2>What I do</h2>
+      <p>My work runs from the mark outward (a logo, a color system, a set of type choices) and then into everything that has to carry it: bottles, business cards, posters, publications, and slide decks. I like the whole span, from the first rough sketch to the file that goes to the printer.</p>
+      <div class="attrs">
+        <span>Brand identity &amp; logo systems</span>
+        <span>Packaging &amp; label design</span>
+        <span>Print &amp; editorial</span>
+        <span>Presentation design</span>
+        <span>AI-assisted workflows</span>
+      </div>
+    </section>
+
+    <section class="section" data-reveal>
+      <h2>Work that has to be exact</h2>
+      <p>Some of what I do lives under real constraints. Spirit labels, for instance, have to clear federal TTB review before they can go on a bottle: every mandatory element present, correctly placed and sized, without the design falling apart around it. I enjoy that kind of problem: making something that's expressive and exactly correct at the same time.</p>
+    </section>
+
+    <section class="section" data-reveal>
+      <h2>How I work</h2>
+      <p>I work in clear phases (direction, exploration, selection, build) and I move quickly once a direction is set. I'd rather show options than describe them, get to a decision, and then execute cleanly. Increasingly that means pairing traditional print craft with AI-assisted workflows, which let me explore more directions and hand over more finished options in less time.</p>
+    </section>
+
+    <section class="section" data-reveal>
+      <h2>Beyond the studio</h2>
+      <p>Alongside client work, I'm the Foundation Outreach Coordinator at WhidbeyHealth, helping tell the story of a rural health system and the community that keeps it going. It keeps me close to the mission-driven design I care about most.</p>
+    </section>
+
+    <section class="section" data-reveal>
+      <h2>Selected work</h2>
+      <div class="worklist">
+        <a href="last-chance-distilling.html"><span class="wl-t">Last Chance Distilling</span><span class="wl-k">Brand identity</span></a>
+        <a href="whidbey-island-seafood.html"><span class="wl-t">Whidbey Island Seafood Co.</span><span class="wl-k">Packaging system</span></a>
+        <a href="island-hospital-foundation.html"><span class="wl-t">Island Hospital Foundation</span><span class="wl-k">Editorial · Healthcare</span></a>
+        <a href="oak-harbor-creative-arts.html"><span class="wl-t">Oak Harbor Creative Arts</span><span class="wl-k">Identity · Print</span></a>
+        <a href="heartbeats.html"><span class="wl-t">Heartbeats</span><span class="wl-k">Editorial · Publication</span></a>
+        <a href="whidbey-island-distillery-rebrand.html"><span class="wl-t">Whidbey Island Distillery</span><span class="wl-k">Identity · Design system</span></a>
+      </div>
+    </section>
+
+    <section class="section" data-reveal>
+      <h2>Get in touch</h2>
+      <p>If you're working on something and think I could help, I'd love to hear about it.</p>
+      <div class="cta">
+        <a class="btn" href="index.html#contact">Start a conversation</a>
+        <a class="plain" href="index.html#work">See the full portfolio →</a>
+      </div>
+    </section>
+  </div>
+
+  <nav class="cs-nav" data-reveal>
+    <div class="wrap">
+      <a href="index.html"><span class="lil">Back to</span>← Home</a>
+      <a href="index.html#work" style="text-align:right"><span class="lil">Next</span>Selected work →</a>
+    </div>
+  </nav>
+</main>
+
+<footer>
+  <div class="foot-bottom">
+    <div class="wrap">
+      <span>© 2026 Rodric Gagnon Design Co.</span>
+      <span>Coupeville, Washington</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeToggle');
+  try{var s=localStorage.getItem('rg-theme'); if(s)root.setAttribute('data-theme',s);}catch(e){}
+  btn.addEventListener('click',function(){
+    var n=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',n);
+    try{localStorage.setItem('rg-theme',n);}catch(e){}
+  });
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}});},{threshold:.1});
+  document.querySelectorAll('[data-reveal]').forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>

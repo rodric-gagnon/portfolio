@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whidbey Island Distillery · Rebrand & design system · Case study · Rodric Gagnon</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --surface-page:#F5F1EA; --surface-raised:#FCFAF6;
+  --text-primary:#1A1714; --text-secondary:#514B44; --text-muted:#8A8177;
+  --border:#E3DCD0; --border-strong:#D2C9BB;
+  --primary:#3A5F78; --primary-hover:#2F4E63; --primary-bg:#E7ECF0;
+  --accent:#C06B47; --accent-hover:#A85A39; --accent-bg:#F3E5DC;
+  --on-primary:#F5F1EA;
+  --font-display:'Newsreader',Georgia,serif;
+  --font-ui:'Inter',system-ui,-apple-system,sans-serif;
+  --font-mono:'Space Mono',ui-monospace,monospace;
+  --maxw:1120px;
+}
+html[data-theme="dark"]{
+  --surface-page:#17140F; --surface-raised:#201C16;
+  --text-primary:#F0EBE1; --text-secondary:#B7AE9F; --text-muted:#8A8175;
+  --border:#2E2820; --border-strong:#3D362B;
+  --primary:#7FA6BE; --primary-hover:#9BBBCF; --primary-bg:#1E2C34;
+  --accent:#D98A63; --accent-hover:#E6A17E; --accent-bg:#2E211A;
+  --on-primary:#17140F;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--surface-page);color:var(--text-primary);font-family:var(--font-ui);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .4s ease,color .4s ease}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.narrow{max-width:720px;margin:0 auto;padding:0 24px}
+.label{font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--surface-page) 88%,transparent);backdrop-filter:blur(10px);border-bottom:.5px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--font-display);font-weight:500;font-size:20px}
+.nav-links{display:flex;align-items:center;gap:22px}
+.nav-links a{font-size:14px;color:var(--text-secondary);transition:color .2s}
+.nav-links a:hover{color:var(--text-primary)}
+.resume{background:var(--primary);color:var(--on-primary)!important;padding:7px 14px;border-radius:7px;font-weight:500;transition:background .2s}
+.resume:hover{background:var(--primary-hover)}
+.toggle{width:34px;height:34px;border:.5px solid var(--border-strong);border-radius:8px;background:transparent;display:grid;place-items:center;cursor:pointer;color:var(--text-secondary);transition:border-color .2s,color .2s}
+.toggle:hover{color:var(--text-primary);border-color:var(--text-muted)}
+.toggle svg{width:16px;height:16px}
+html[data-theme="dark"] .sun{display:block}html[data-theme="dark"] .moon{display:none}
+.sun{display:none}.moon{display:block}
+
+.cs-hero{padding:44px 0 8px}
+.back{font-family:var(--font-mono);font-size:12px;color:var(--text-secondary);transition:color .2s}
+.back:hover{color:var(--primary)}
+.cs-hero h1{font-family:var(--font-display);font-weight:500;font-size:clamp(38px,6vw,64px);line-height:1.02;letter-spacing:-.01em;margin:16px 0 0}
+.dek{font-size:clamp(17px,2.3vw,21px);color:var(--text-secondary);max-width:660px;margin-top:16px;line-height:1.5}
+.meta{display:flex;flex-wrap:wrap;gap:14px 40px;margin-top:30px;padding-top:22px;border-top:.5px solid var(--border)}
+.meta .k{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em}
+.meta .v{font-size:14.5px;margin-top:4px}
+
+.lead{margin:34px auto 8px}
+.panel{background:var(--primary-bg);border:.5px solid var(--border);border-radius:16px;padding:22px}
+.panel img{display:block;width:100%;height:auto;border-radius:8px}
+.panel figcaption{font-family:var(--font-mono);font-size:12px;color:var(--text-secondary);margin-top:14px}
+.panel figcaption::before{content:"· ";color:var(--accent)}
+
+.section{padding:22px 0}
+.section h2{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,3.2vw,32px);margin:24px 0 14px}
+.section p{color:var(--text-secondary);margin-bottom:16px}
+.attrs{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 4px}
+.attrs span{font-family:var(--font-mono);font-size:11px;color:var(--text-secondary);background:var(--surface-raised);border:.5px solid var(--border);border-radius:6px;padding:5px 10px}
+
+.swatches{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 4px}
+.sw{width:64px}
+.sw .c{height:44px;border-radius:8px;border:.5px solid var(--border-strong)}
+.sw .h{font-family:var(--font-mono);font-size:10px;color:var(--text-muted);margin-top:6px;text-align:center}
+
+.figure{margin:26px 0}
+.figure img{display:block;width:100%;height:auto;border-radius:12px;border:.5px solid var(--border)}
+.figure figcaption{font-family:var(--font-mono);font-size:12px;color:var(--text-secondary);margin-top:12px}
+.figure figcaption::before{content:"· ";color:var(--accent)}
+.figrow{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:26px 0}
+.figrow figure{margin:0}
+.figrow img{display:block;width:100%;aspect-ratio:1/1;object-fit:contain;background:var(--surface-raised);border-radius:12px;border:.5px solid var(--border);padding:18px}
+.figrow figcaption{font-family:var(--font-mono);font-size:11.5px;color:var(--text-secondary);margin-top:10px}
+.figrow figcaption::before{content:"· ";color:var(--accent)}
+@media(max-width:640px){.figrow{grid-template-columns:1fr}}
+
+.cs-nav{border-top:.5px solid var(--border);margin-top:36px}
+.cs-nav .wrap{display:flex;justify-content:space-between;gap:16px;padding:32px 24px;flex-wrap:wrap}
+.cs-nav a{font-family:var(--font-display);font-size:20px;color:var(--primary)}
+.cs-nav .lil{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:4px}
+
+footer{border-top:.5px solid var(--border);background:var(--surface-raised)}
+.foot-bottom .wrap{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;flex-wrap:wrap}
+.foot-bottom span{font-size:12.5px;color:var(--text-muted)}
+
+[data-reveal]{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+[data-reveal].is-in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}[data-reveal]{opacity:1;transform:none}}
+@media(max-width:760px){.nav-links a:not(.resume){display:none}}
+
+/* WID rebrand demos */
+.wid-probs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0 6px}
+@media(max-width:640px){.wid-probs{grid-template-columns:1fr}}
+.wid-prob{border:.5px solid var(--border);border-left:3px solid var(--accent);border-radius:10px;padding:15px 17px;background:var(--surface-raised)}
+.wid-prob .pl{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.wid-prob .pt{font-weight:600;margin-top:3px;color:var(--text-primary);font-size:15px}
+.wid-prob .pd{font-size:13px;color:var(--text-secondary);margin-top:5px;line-height:1.5}
+.wid-pal h4{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--text-muted);margin:18px 0 8px}
+.wid-swrow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:640px){.wid-swrow{grid-template-columns:repeat(2,1fr)}}
+.wid-sw{border:.5px solid var(--border);border-radius:9px;overflow:hidden;background:var(--surface-raised)}
+.wid-sw .chip{height:56px}
+.wid-sw .m{padding:7px 9px}
+.wid-sw .nm{font-size:12px;font-weight:600;color:var(--text-primary)}
+.wid-sw .hx{font-family:var(--font-mono);font-size:9.5px;color:var(--text-muted);margin-top:1px}
+.wid-contrast{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0 6px}
+@media(max-width:640px){.wid-contrast{grid-template-columns:1fr}}
+.wid-pair{border-radius:11px;padding:15px 16px;border:1px solid rgba(216,183,96,.28)}
+.wid-pair .s{font-family:'Crimson Pro',Georgia,serif;font-size:21px;font-weight:600;line-height:1.1}
+.wid-pair .r{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-family:var(--font-mono);font-size:11px}
+.wid-g{font-weight:700;font-size:9px;padding:2px 7px;border-radius:4px;margin-left:6px}
+.wid-aaa{background:#2f7d4f;color:#fff}.wid-na{background:#961515;color:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap nav">
+    <a href="index.html" class="brand">Rodric Gagnon</a>
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="about.html">About</a>
+      <a href="index.html#contact">Contact</a>
+      <button class="toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="cs-hero">
+    <div class="wrap">
+      <a href="index.html#work" class="back">← Selected work</a>
+      <div style="margin-top:20px" data-reveal>
+        <span class="label">Case study · Brand identity</span>
+        <h1>Whidbey Island Distillery: the rebrand</h1>
+        <p class="dek">Turning a single, inflexible crest into a responsive identity system: logo, color, type, and a living style guide the distillery can grow with.</p>
+        <div class="meta">
+          <div><div class="k">Client</div><div class="v">Whidbey Island Distillery</div></div>
+          <div><div class="k">Role</div><div class="v">Brand identity &amp; design system</div></div>
+          <div><div class="k">Year</div><div class="v">2025</div></div>
+          <div><div class="k">Scope</div><div class="v">Logo system · color · type · style guide</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap lead" data-reveal>
+    <figure class="panel">
+      <img src="images/whidbey-island-distillery-rebrand-1.jpg" alt="Whidbey Island Distillery new logo lockup system: primary, horizontal, badge, and small variants" width="1200" height="1037">
+      <figcaption>The new identity as a lockup system: one mark in the forms a brand actually needs</figcaption>
+    </figure>
+  </div>
+
+  <div class="narrow">
+    <section class="section" data-reveal>
+      <h2>Overview</h2>
+      <p>Whidbey Island Distillery (a Langley, Washington maker of rye whiskey and berry liqueurs) had a logo that worked on exactly one thing and drifted everywhere else. The rebrand rebuilt the identity as a system: a responsive family of lockups, a defined color palette, a coherent type system, and a living style guide the distillery can work from directly.</p>
+    </section>
+
+    <section class="section" data-reveal>
+      <h2>Where it started</h2>
+      <p>The starting point was a single crest asked to do every job, and it couldn&rsquo;t. Four problems, specifically:</p>
+    </section>
+    <div class="wid-probs" data-reveal>
+      <div class="wid-prob"><div class="pl">Problem 01</div><div class="pt">Not responsive</div><div class="pd">The mark existed in a single version that broke down as soon as it had to shrink.</div></div>
+      <div class="wid-prob"><div class="pl">Problem 02</div><div class="pt">Word grouping</div><div class="pd">Stacked as it was, the name read as “Whidbey / Island Distillery” instead of “Whidbey Island / Distillery.”</div></div>
+      <div class="wid-prob"><div class="pl">Problem 03</div><div class="pt">No set color</div><div class="pd">With no defined palette, the color shifted between print and screen, and there were no complementary colors to build with.</div></div>
+      <div class="wid-prob"><div class="pl">Problem 04</div><div class="pt">Inconsistent type</div><div class="pd">Even inside the crest, the “W” was set in a different typeface than the spelled-out name.</div></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <figure class="figure" data-reveal>
+      <img src="images/whidbey-island-distillery-rebrand-2.jpg" alt="The previous Whidbey Island Distillery logo shown at three sizes on black" width="1100" height="926" loading="lazy" decoding="async">
+      <figcaption>The previous mark: one fixed form, ambiguous word grouping, and no set color or type</figcaption>
+    </figure>
+  </div>
+
+  <div class="narrow">
+    <section class="section" data-reveal>
+      <h2>A responsive logo system</h2>
+      <p>The fix for both the scaling and the word-grouping problems was to stop treating the logo as a single artifact and build a lockup family instead: a full primary lockup for signage and packaging, a horizontal badge-and-wordmark for headers, a compact badge for tight spaces, and a stripped roundel for the smallest applications. Each is drawn so the name always reads &ldquo;Whidbey Island,&rdquo; then &ldquo;Distillery,&rdquo; at every size.</p>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <figure class="figure" data-reveal>
+      <img src="images/whidbey-island-distillery-rebrand-3.jpg" alt="Six candidate typefaces tested for the crest W: Spectral, Crimson Pro, Cantata One, Fairplex Wide, Esteban, Montagu Slab" width="1320" height="980" loading="lazy" decoding="async">
+      <figcaption>Choosing the crest letterform: six candidates tested so the &lsquo;W&rsquo; and the wordmark share one typeface</figcaption>
+    </figure>
+  </div>
+
+  <div class="narrow">
+    <section class="section" data-reveal>
+      <h2>One typeface for the whole mark</h2>
+      <p>Inside the old crest, the &ldquo;W&rdquo; and the spelled-out name were set in two different typefaces, a small thing that made the mark feel assembled rather than designed. We tested the crest &ldquo;W&rdquo; across six candidates (Spectral, Crimson Pro, Cantata One, Fairplex Wide, Esteban, and Montagu Slab) and unified on Crimson Pro, so the monogram and the wordmark finally speak the same language.</p>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <figure class="figure" data-reveal>
+      <img src="images/whidbey-island-distillery-rebrand-4.jpg" alt="Whidbey Island Distillery type system specimen showing Crimson Pro, Roboto, Roboto Condensed and Rumble Brave" width="1240" height="1086" loading="lazy" decoding="async">
+      <figcaption>The type system: Crimson Pro for the brand, Roboto for information, Rumble Brave for product names</figcaption>
+    </figure>
+  </div>
+
+  <div class="narrow">
+    <section class="section" data-reveal>
+      <h2>A type system</h2>
+      <p>From there, the full type system. Crimson Pro carries the brand from the crest through display and body copy; Roboto and Roboto Condensed handle long informational copy and regulated text like the government warning; and Rumble Brave, a decorative Victorian display face, gives each product its own hand-lettered name: Bunker Rye, Rye Wisdom, and the berry liqueurs.</p>
+    </section>
+
+    <section class="section" data-reveal>
+      <h2>A defined palette</h2>
+      <p>The old mark had no set color, so it drifted between print and screen. The rebrand fixed a core palette (Rye Grain gold, Crimson, Chalkboard black, and a warm Bone), then extended it into product families: a cask-and-oak series for the whiskeys and a deeper set for the berry liqueurs, so a shelf of Whidbey Island bottles reads as one line with many members.</p>
+    </section>
+    <div class="wid-pal" data-reveal>
+      <h4>Core palette</h4>
+      <div class="wid-swrow"><div class="wid-sw"><div class="chip" style="background:#D8B760"></div><div class="m"><div class="nm">Rye Grain</div><div class="hx">#D8B760</div></div></div><div class="wid-sw"><div class="chip" style="background:#961515"></div><div class="m"><div class="nm">Crimson</div><div class="hx">#961515</div></div></div><div class="wid-sw"><div class="chip" style="background:#1A1A1A"></div><div class="m"><div class="nm">Chalkboard</div><div class="hx">#1A1A1A</div></div></div><div class="wid-sw"><div class="chip" style="background:#E8E2D6"></div><div class="m"><div class="nm">Bone</div><div class="hx">#E8E2D6</div></div></div></div>
+      <h4>Cask &amp; oak series: the whiskeys</h4>
+      <div class="wid-swrow"><div class="wid-sw"><div class="chip" style="background:#34493B"></div><div class="m"><div class="nm">Spruce</div><div class="hx">#34493B</div></div></div><div class="wid-sw"><div class="chip" style="background:#7A2B22"></div><div class="m"><div class="nm">Oak Red</div><div class="hx">#7A2B22</div></div></div><div class="wid-sw"><div class="chip" style="background:#5C4327"></div><div class="m"><div class="nm">Hardwood</div><div class="hx">#5C4327</div></div></div><div class="wid-sw"><div class="chip" style="background:#14110F"></div><div class="m"><div class="nm">Coffee Oak</div><div class="hx">#14110F</div></div></div></div>
+      <h4>Berry liqueurs</h4>
+      <div class="wid-swrow"><div class="wid-sw"><div class="chip" style="background:#3D2B4F"></div><div class="m"><div class="nm">Blackberry</div><div class="hx">#3D2B4F</div></div></div><div class="wid-sw"><div class="chip" style="background:#7A1E2B"></div><div class="m"><div class="nm">Raspberry</div><div class="hx">#7A1E2B</div></div></div><div class="wid-sw"><div class="chip" style="background:#5A2440"></div><div class="m"><div class="nm">Loganberry</div><div class="hx">#5A2440</div></div></div><div class="wid-sw"><div class="chip" style="background:#46213A"></div><div class="m"><div class="nm">Boysenberry</div><div class="hx">#46213A</div></div></div></div>
+    </div>
+    <section class="section" data-reveal>
+      <h2>The Distiller&rsquo;s Specimen Book</h2>
+      <p>All of it lives in a single living style guide (&ldquo;The Distiller&rsquo;s Specimen Book&rdquo;) that lays out color, type, the logo lockups, components, and voice as a set of numbered plates the distillery can work from directly. Because so much of the brand runs light type on dark grounds, the guide includes a live contrast checker: every text-and-background pairing is vetted against WCAG ratios before it reaches a label or a screen.</p>
+    </section>
+    <div class="wid-contrast" data-reveal>
+      <div class="wid-pair" style="background:#1A1A1A;color:#E8E2D6"><div class="s">Whidbey Island</div><div class="r"><span style="opacity:.75">Bone on Chalkboard</span><span>17.4:1<span class="wid-g wid-aaa">AAA</span></span></div></div>
+      <div class="wid-pair" style="background:#961515;color:#E8E2D6"><div class="s">Whidbey Island</div><div class="r"><span style="opacity:.75">Bone on Crimson</span><span>8.7:1<span class="wid-g wid-aaa">AAA</span></span></div></div>
+      <div class="wid-pair" style="background:#1A1A1A;color:#D8B760"><div class="s">Whidbey Island</div><div class="r"><span style="opacity:.75">Rye Grain on Chalkboard</span><span>9.0:1<span class="wid-g wid-aaa">AAA</span></span></div></div>
+      <div class="wid-pair" style="background:#1A1A1A;color:#961515"><div class="s">Whidbey Island</div><div class="r"><span style="opacity:.75">Crimson on Chalkboard</span><span>2.0:1<span class="wid-g wid-na">Fail</span></span></div></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <figure class="figure" data-reveal>
+      <img src="images/whidbey-island-distillery-rebrand-5.jpg" alt="The Bunker Rye Whiskey bottle in the spruce-green Traditional colorway" width="1320" height="742" loading="lazy" decoding="async">
+      <figcaption>The Bunker Rye: a new release built entirely from the system</figcaption>
+    </figure>
+  </div>
+
+  <div class="narrow">
+    <section class="section" data-reveal>
+      <h2>Across the line</h2>
+      <p>With the system in place, new products start from it instead of from scratch. The Bunker (a rye whiskey in the spruce-green &ldquo;Traditional&rdquo; colorway) carries the crest, the type, and the palette straight onto the shelf, alongside the flagship Rye Wisdom.</p>
+    </section>
+
+    <section class="section" data-reveal>
+      <h2>Outcome</h2>
+      <p>Whidbey Island Distillery went from a single, inflexible crest to a complete identity system (one that scales, reads correctly, holds its color, and keeps its type consistent) with a style guide that lets the brand keep growing without drifting.</p>
+    </section>
+  </div>
+
+  <nav class="cs-nav" data-reveal>
+    <div class="wrap">
+      <a href="index.html#work"><span class="lil">Back to</span>← Selected work</a>
+      <a href="last-chance-distilling.html" style="text-align:right"><span class="lil">Next</span>Last Chance Distilling →</a>
+    </div>
+  </nav>
+</main>
+
+<footer>
+  <div class="foot-bottom">
+    <div class="wrap">
+      <span>© 2026 Rodric Gagnon Design Co.</span>
+      <span>Coupeville, Washington</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeToggle');
+  try{var s=localStorage.getItem('rg-theme'); if(s)root.setAttribute('data-theme',s);}catch(e){}
+  btn.addEventListener('click',function(){
+    var n=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',n);
+    try{localStorage.setItem('rg-theme',n);}catch(e){}
+  });
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}});},{threshold:.1});
+  document.querySelectorAll('[data-reveal]').forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>

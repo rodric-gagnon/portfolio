@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Island Hospital Foundation · 2019 Impact Report · Case study · Rodric Gagnon</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --surface-page:#F5F1EA; --surface-raised:#FCFAF6;
+  --text-primary:#1A1714; --text-secondary:#514B44; --text-muted:#8A8177;
+  --border:#E3DCD0; --border-strong:#D2C9BB;
+  --primary:#3A5F78; --primary-hover:#2F4E63; --primary-bg:#E7ECF0;
+  --accent:#C06B47; --accent-hover:#A85A39; --accent-bg:#F3E5DC;
+  --on-primary:#F5F1EA;
+  --font-display:'Newsreader',Georgia,serif;
+  --font-ui:'Inter',system-ui,-apple-system,sans-serif;
+  --font-mono:'Space Mono',ui-monospace,monospace;
+  --maxw:1120px;
+}
+html[data-theme="dark"]{
+  --surface-page:#17140F; --surface-raised:#201C16;
+  --text-primary:#F0EBE1; --text-secondary:#B7AE9F; --text-muted:#8A8175;
+  --border:#2E2820; --border-strong:#3D362B;
+  --primary:#7FA6BE; --primary-hover:#9BBBCF; --primary-bg:#1E2C34;
+  --accent:#D98A63; --accent-hover:#E6A17E; --accent-bg:#2E211A;
+  --on-primary:#17140F;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--surface-page);color:var(--text-primary);font-family:var(--font-ui);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .4s ease,color .4s ease}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.narrow{max-width:720px;margin:0 auto;padding:0 24px}
+.label{font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--surface-page) 88%,transparent);backdrop-filter:blur(10px);border-bottom:.5px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--font-display);font-weight:500;font-size:20px}
+.nav-links{display:flex;align-items:center;gap:22px}
+.nav-links a{font-size:14px;color:var(--text-secondary);transition:color .2s}
+.nav-links a:hover{color:var(--text-primary)}
+.resume{background:var(--primary);color:var(--on-primary)!important;padding:7px 14px;border-radius:7px;font-weight:500;transition:background .2s}
+.resume:hover{background:var(--primary-hover)}
+.toggle{width:34px;height:34px;border:.5px solid var(--border-strong);border-radius:8px;background:transparent;display:grid;place-items:center;cursor:pointer;color:var(--text-secondary);transition:border-color .2s,color .2s}
+.toggle:hover{color:var(--text-primary);border-color:var(--text-muted)}
+.toggle svg{width:16px;height:16px}
+html[data-theme="dark"] .sun{display:block}html[data-theme="dark"] .moon{display:none}
+.sun{display:none}.moon{display:block}
+
+.cs-hero{padding:44px 0 8px}
+.back{font-family:var(--font-mono);font-size:12px;color:var(--text-secondary);transition:color .2s}
+.back:hover{color:var(--primary)}
+.cs-hero h1{font-family:var(--font-display);font-weight:500;font-size:clamp(38px,6vw,64px);line-height:1.02;letter-spacing:-.01em;margin:16px 0 0}
+.dek{font-size:clamp(17px,2.3vw,21px);color:var(--text-secondary);max-width:660px;margin-top:16px;line-height:1.5}
+.meta{display:flex;flex-wrap:wrap;gap:14px 40px;margin-top:30px;padding-top:22px;border-top:.5px solid var(--border)}
+.meta .k{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em}
+.meta .v{font-size:14.5px;margin-top:4px}
+
+.lead{margin:34px auto 8px}
+.panel{background:var(--primary-bg);border:.5px solid var(--border);border-radius:16px;padding:22px}
+.panel img{display:block;width:100%;height:auto;border-radius:8px}
+.panel figcaption{font-family:var(--font-mono);font-size:12px;color:var(--text-secondary);margin-top:14px}
+.panel figcaption::before{content:"· ";color:var(--accent)}
+
+.section{padding:22px 0}
+.section h2{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,3.2vw,32px);margin:24px 0 14px}
+.section p{color:var(--text-secondary);margin-bottom:16px}
+.attrs{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 4px}
+.attrs span{font-family:var(--font-mono);font-size:11px;color:var(--text-secondary);background:var(--surface-raised);border:.5px solid var(--border);border-radius:6px;padding:5px 10px}
+
+.swatches{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 4px}
+.sw{width:64px}
+.sw .c{height:44px;border-radius:8px;border:.5px solid var(--border-strong)}
+.sw .h{font-family:var(--font-mono);font-size:10px;color:var(--text-muted);margin-top:6px;text-align:center}
+
+.figure{margin:26px 0}
+.figure img{display:block;width:100%;height:auto;border-radius:12px;border:.5px solid var(--border)}
+.figure figcaption{font-family:var(--font-mono);font-size:12px;color:var(--text-secondary);margin-top:12px}
+.figure figcaption::before{content:"· ";color:var(--accent)}
+.figrow{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:26px 0}
+.figrow figure{margin:0}
+.figrow img{display:block;width:100%;aspect-ratio:1/1;object-fit:contain;background:var(--surface-raised);border-radius:12px;border:.5px solid var(--border);padding:18px}
+.figrow figcaption{font-family:var(--font-mono);font-size:11.5px;color:var(--text-secondary);margin-top:10px}
+.figrow figcaption::before{content:"· ";color:var(--accent)}
+@media(max-width:640px){.figrow{grid-template-columns:1fr}}
+
+.cs-nav{border-top:.5px solid var(--border);margin-top:36px}
+.cs-nav .wrap{display:flex;justify-content:space-between;gap:16px;padding:32px 24px;flex-wrap:wrap}
+.cs-nav a{font-family:var(--font-display);font-size:20px;color:var(--primary)}
+.cs-nav .lil{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:4px}
+
+footer{border-top:.5px solid var(--border);background:var(--surface-raised)}
+.foot-bottom .wrap{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;flex-wrap:wrap}
+.foot-bottom span{font-size:12.5px;color:var(--text-muted)}
+
+[data-reveal]{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+[data-reveal].is-in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}[data-reveal]{opacity:1;transform:none}}
+@media(max-width:760px){.nav-links a:not(.resume){display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap nav">
+    <a href="index.html" class="brand">Rodric Gagnon</a>
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="about.html">About</a>
+      <a href="index.html#contact">Contact</a>
+      <button class="toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="cs-hero">
+    <div class="wrap">
+      <a href="index.html#work" class="back">← Selected work</a>
+      <div style="margin-top:20px" data-reveal>
+        <span class="label">Case study · Editorial</span>
+        <h1>The Difference You&rsquo;ve Made</h1>
+        <p class="dek">Island Hospital Foundation&rsquo;s 2019 impact report: a donor-facing publication that turns a year of giving into a story you can hold.</p>
+        <div class="meta">
+          <div><div class="k">Client</div><div class="v">Island Hospital Foundation</div></div>
+          <div><div class="k">Role</div><div class="v">Editorial design &amp; layout</div></div>
+          <div><div class="k">Year</div><div class="v">2019</div></div>
+          <div><div class="k">Scope</div><div class="v">Annual report · print · donor storytelling</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap lead" data-reveal>
+    <figure class="panel">
+      <img src="images/island-hospital-foundation-1.jpg" alt="Spreads from the Island Hospital Foundation 2019 impact report laid out together" width="1400" height="788">
+      <figcaption>The report end to end: features, patient stories, and financials across the book</figcaption>
+    </figure>
+  </div>
+
+  <div class="narrow">
+    <section class="section" data-reveal>
+      <h2>Overview</h2>
+      <p>Island Hospital Foundation&rsquo;s annual impact report accounts for a year of philanthropy and shows donors exactly what their giving made possible: from mental-health resources in the emergency department to cancer care close to home. The 2019 edition was built around the idea in its title: the difference the reader has made.</p>
+    </section>
+
+    <section class="section" data-reveal>
+      <h2>The brief</h2>
+      <p>A foundation&rsquo;s annual report has two jobs that pull in different directions. It has to account for the money with real numbers, and it has to make donors feel the good those numbers did. Lean too far toward accounting and it reads like a bank statement; too far toward sentiment and it feels like it&rsquo;s hiding something. The goal here was a report that says thank you first, and proves it second.</p>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <figure class="figure" data-reveal>
+      <img src="images/island-hospital-foundation-2.jpg" alt="Island Hospital Foundation 2019 impact report cover, titled The Difference You've Made" width="1240" height="852" loading="lazy" decoding="async">
+      <figcaption>The cover: a reader at the summit, and the report&rsquo;s promise in its title</figcaption>
+    </figure>
+  </div>
+
+  <div class="narrow">
+    <section class="section" data-reveal>
+      <h2>Structure and voice</h2>
+      <p>The book opens with a letter of thanks from the Foundation&rsquo;s leadership, then moves through feature stories (like a program stepping up access to mental-health care in the emergency department) and patient stories told in their own register. Warm serif headlines and a steady editorial grid keep long-form reading comfortable, so the writing carries the emotion and the layout stays out of its way.</p>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <figure class="figure" data-reveal>
+      <img src="images/island-hospital-foundation-3.jpg" alt="Interior spreads of the 2019 impact report showing a gratitude letter, a mental-health feature, and financials" width="1300" height="1272" loading="lazy" decoding="async">
+      <figcaption>Inside: a gratitude letter, program features, and a plain-spoken look at the numbers</figcaption>
+    </figure>
+  </div>
+
+  <div class="narrow">
+    <section class="section" data-reveal>
+      <h2>Making the numbers human</h2>
+      <p>Rather than burying giving in a table, the financial section ties dollars to the programs they funded: education and training, patient support, department needs, and the Merle Cancer Care Center. Each figure sits beside the work it paid for, so generosity reads as outcomes instead of line items.</p>
+    </section>
+
+    <section class="section" data-reveal>
+      <h2>A warm, photographic palette</h2>
+      <p>A coral-to-gold accent runs throughout, drawn from the cover&rsquo;s golden-hour photograph. Real images of care (clinicians with patients, quiet moments of recovery) do the emotional work, while the color system keeps the whole book feeling like one continuous thank-you.</p>
+    </section>
+
+    <section class="section" data-reveal>
+      <h2>Outcome</h2>
+      <p>A report donors actually sit down and read: one that honors their generosity, makes the impact concrete, and leaves them ready to give again.</p>
+    </section>
+  </div>
+
+  <nav class="cs-nav" data-reveal>
+    <div class="wrap">
+      <a href="index.html#work"><span class="lil">Back to</span>← Selected work</a>
+      <a href="oak-harbor-creative-arts.html" style="text-align:right"><span class="lil">Next</span>Oak Harbor Creative Arts →</a>
+    </div>
+  </nav>
+</main>
+
+<footer>
+  <div class="foot-bottom">
+    <div class="wrap">
+      <span>© 2026 Rodric Gagnon Design Co.</span>
+      <span>Coupeville, Washington</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeToggle');
+  try{var s=localStorage.getItem('rg-theme'); if(s)root.setAttribute('data-theme',s);}catch(e){}
+  btn.addEventListener('click',function(){
+    var n=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',n);
+    try{localStorage.setItem('rg-theme',n);}catch(e){}
+  });
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}});},{threshold:.1});
+  document.querySelectorAll('[data-reveal]').forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>
